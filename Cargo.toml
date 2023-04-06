@@ -1,0 +1,25 @@
+[package]
+name = "dioxus-server-fns"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+serde = "1.0.159"
+axum = { version = "0.6.12", optional = true }
+dioxus = { git = "https://github.com/Demonthos/dioxus", branch = "server-fn" }
+dioxus-web = { git = "https://github.com/Demonthos/dioxus", branch = "server-fn", features = ["hydrate"],optional = true }
+dioxus-server = { git = "https://github.com/Demonthos/dioxus", branch = "server-fn" }
+tokio = { version = "1", features = ["full"], optional = true }
+
+[features]
+default = ["front"]
+ssr = ["axum", "tokio", "dioxus-server/axum"]
+front = ["dioxus-web"]
+
+[profile.release]
+lto = true
+panic = "abort"
+opt-level = 'z'
+strip = true
+codegen-units = 1
