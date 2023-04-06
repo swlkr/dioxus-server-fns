@@ -1,4 +1,4 @@
-# Will probably dioxus server fn example
+# dioxus server fn example
 
 _Dioxus server fns!_
 
