@@ -39,14 +39,14 @@ Next up, we'll need to install the wasm-opt-rs crate and plugin:
 
 ```sh
 cargo install wasm-opt --locked
-# make sure you're in the project root (single-file-dioxus-ssr-hydrate)
+# make sure you're in the project root
 dioxus plugin add --git https://github.com/brson/wasm-opt-rs.git
 ```
 
 Finally:
 
 ```sh
-dioxus build --release --features frontend
+dioxus build --release --features front
 ```
 
 Should give you a wasm size around ~280KB
