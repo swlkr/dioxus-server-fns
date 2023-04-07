@@ -3,7 +3,7 @@ use dioxus::prelude::*;
 use dioxus_server::prelude::*;
 
 fn main() {
-    #[cfg(feature = "front")]
+    #[cfg(feature = "csr")]
     dioxus_web::launch_cfg(app, dioxus_web::Config::new().hydrate(true));
 
     #[cfg(feature = "ssr")]

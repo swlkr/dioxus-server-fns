@@ -13,9 +13,9 @@ dioxus-server = { git = "https://github.com/Demonthos/dioxus", branch = "server-
 tokio = { version = "1", features = ["full"], optional = true }
 
 [features]
-default = ["front"]
+default = ["csr"]
 ssr = ["axum", "tokio", "dioxus-server/axum"]
-front = ["dioxus-web"]
+csr = ["dioxus-web"]
 
 [profile.release]
 lto = true
